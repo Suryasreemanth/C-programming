@@ -13,6 +13,7 @@ int main()
  }
  int rev[n];
  int j=0;
+ printf("Enter reverse of an array:\n");
  for(i=n-1;i>=0;i--)
  {
    rev[j]=arr[i];
