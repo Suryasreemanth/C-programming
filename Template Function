@@ -1,1 +1,167 @@
 #include<stdio.h>
+#include<iostream>
+using namespace std;
+#define MAX 20
+template <class T>
+class Array{
+	protected :
+		int x;
+		public :
+       void initialize(T RSArray[],int s,T l);
+		 void addelement(T RSArray[],int h,int s);
+		 int inflate(T RSArray[],int p,int q);
+		void fetchelement(T RSArray[]);
+		void resetelement(T RSArray[],int k,int r,T g);
+		void getcount(T RSArray[],int j);
+};
+template <class T>
+	void Array<T>:: initialize(T RSArray[],int  s, T l)
+{
+	int i;
+ for( i=0;i<s;i++)
+ {
+RSArray[i]=l;
+ }
+ cout<<" by initializing to l the series of array"<<"\n";
+ for(i=0;i<s;i++)
+ {
+cout<<RSArray[i]<<"\n";
+ }
+ 
+}
+ void  Array<T>:: addelement(T RSArray[],int h,int s)
+{
+ 
+  cout<< "Enter Value of "<<s<<" number"<<"\n";
+  for(int i=h;i<h+s;i++)
+  {
+ cin>>RSArray[i];
+  }
+  
+}  
+int Array<T>::inflate(T RSArray[],int  n,int c)
+{
+    cout<< "We are inflating one element by allocating space"<<"\n";
+         char ch;
+         while(n<c)
+         {
+		 cout<<"Do you want to Continue (Y/N)"<<"\n";
+         cin>>ch;
+         if(ch=='Y'||ch=='y')
+         {
+         	cin>>RSArray[n];
+			 n++;         	
+		 }
+         }
+         if(n>=c)
+         cout<<"We cannot inflate anymore"<<"\n";
+         return n;
+}
+void Array<T>::fetchelement(T RSArray [])
+{ 
+	int x;
+          cout<<"Enter location of desired element in array"<<"\n";
+        cin>>x;
+	x--;
+
+cout<<"located element is "<<RSArray[x]<<"\n";
+}
+void Array<T>::resetelement(T RSArray[],int k,int r,T g)
+{
+	int i;
+for( i=r-1;i<k;i++)
+{
+RSArray[i]=g;
+}
+cout<<" our desired series of array "<<"\n";
+for(i=0;i<k;i++)
+{
+cout<<RSArray[i]<<"\n";
+}
+}
+  void Array<T>:: getcount(T  RSArray [],int j)
+{
+cout<<" The current elements in an array:"<<j<<"\n";
+}
+int main()
+{
+ Array<int>a;
+ Array<char>c;
+ Array<double>d;
+ 
+ int n,s,o,l,r,k,q,i,n1,d1,f1;
+ char ch,w,m,p;
+ double a1,b1;
+ int initialsize=5;
+ int upperbound=10;
+ int f=initialsize;
+ int RSArray[MAX];
+ char RSArray1[MAX];
+ double RSArray2[MAX];
+ cout<<"Enter Integer values :"<<endl;
+         for(i=0;i<f;i++)
+         {
+         cin>>RSArray[i];
+         }
+		 o=i;
+int z=upperbound;
+   cout<<" initialize value of an array"<<"\n";
+   cin>>l;
+    a.initialize(RSArray,i,l);
+   cout<<"Enter no of element to be added "<<"\n";
+    cin>>s;
+   a.addelement(RSArray,i,s);
+   n1=i+s;
+    d1=a.inflate(RSArray,n1,z);
+   a.fetchelement(RSArray);
+     cout<<"enter location that array has to reset"<<"\n";
+        cin>>r;
+cout<<"Enter Value of element"<<"\n";
+cin>>l;
+
+   a.resetelement(RSArray,d1,r,l);
+    q=20;
+   
+    a.getcount(RSArray,d1);
+    cout<<"Enter characters"<<endl;
+    for(k=0;k<f;k++)
+    {
+         cin>>RSArray1[k];
+    }	 
+    cout<<" initialize value of an character array"<<"\n";
+   cin>>m;
+    c.initialize(RSArray1,k,m);
+   cout<<"Enter no of element to be added "<<"\n";
+    cin>>s;
+   c.addelement(RSArray1,k,s);
+   n1=k+s;
+    d1=c.inflate(RSArray1,n1,z);
+   c.fetchelement(RSArray1);
+     cout<<"enter location that array has to reset"<<"\n";
+        cin>>r;
+     cout<<"Enter  Character Value of element"<<"\n";
+        cin>>p;
+   c.resetelement(RSArray1,d1,r,p);
+    c.getcount(RSArray1,d1);
+    cout<<"Enter Double values :"<<endl;
+    for(k=0;k<f;k++)
+    {
+        cin>>RSArray2[k];
+    }
+    cout<<"Initialize an double value to the RSArray2"<<endl;
+    cin>>a1;
+    d.initialize(RSArray2,k,a1);
+    cout<<"Enter no of elements to be added :"<<"\n";
+    cin>>s;
+    d.addelement(RSArray2,k,s);
+    n1=k+s;
+    f1=d.inflate(RSArray2,n1,z);
+    d.fetchelement(RSArray2);
+     cout<<"Enter location that has to be reset :"<<endl;
+     cin>>r;
+     cout<<"Enter double value :"<<endl;
+     cin>>b1;
+     d.resetelement(RSArray2,f1,r,b1);
+     d.getcount(RSArray2,f1);
+}    
+  
