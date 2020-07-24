@@ -1,0 +1,16 @@
+#includrinte<stdio.h>
+int main()
+{
+char str[100];
+printf("Enter name of an string");
+scanf("[^\n]",str);
+int i=0,len=0;
+while(str[i]!='\0')
+{
+ i++;
+ len++;
+}
+for(i=len-2;i>=0;i--)
+{
+printf("%c",str[i]);
+}
