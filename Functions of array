@@ -1,1 +1,95 @@
-#
+#include<iostream>
+using namespace std;
+struct adi
+{
+	int sur[50];
+	int index;
+};	
+void initialize(int arr[20],int s,int f);
+void fetchelement(int ar[23],int loc);
+void resetelement(int gun[],int x,int h,int c);
+void getcount(int sur[40],int y);
+void addelement(int adi[100],int m,int y);
+void getmaxsize(int sd[20],int g);
+int o;
+int main()
+{
+	 struct adi sim;
+	int i,n,k,z,r,l,s,q;
+	int arr[100];
+	cout<<"Enter no of elements"<<"\n";
+	cin>>n;
+         for(i=0;i<n;i++)
+	 {
+		 cin>>arr[i];
+         }
+	 cout<<"Enter initial value"<<"\n";
+	 cin>>k;
+    initialize(arr,n,k);
+    cout<<"Enter no of element to be added "<<"\n";
+    cin>>s;
+    addelement(arr,n,s);
+    o=n+s;
+    fetchelement(arr,o);
+     cout<<"enter location that array has to reset"<<"\n";
+        cin>>r;
+	cout<<"Enter Value of element"<<"\n";
+	cin>>l;
+    resetelement(arr,o,r,l);
+    q=sizeof(arr)/sizeof(int);
+    getmaxsize(arr,q);
+    getcount(arr,o);
+}
+void initialize(int adi[],int s,int l)
+{
+	int k,i;
+ for( i=0;i<s;i++)
+ {
+	 adi[i]=l;
+ }
+ cout<<" by initializing to l the series of array"<<"\n";
+ for(i=0;i<s;i++)
+ {
+	 cout<<adi[i]<<"\n";
+ }
+
+}
+void addelement(int sur[],int h,int s)
+{
+  int i;
+  cout<< "Enter Details of students of "<<h+s<<" number"<<"\n";
+  for(i=0;i<h+s;i++)
+  {
+	  cin>>sur[i];
+  }
+}  
+
+void fetchelement(int card[],int m)
+{
+	int loc,i;
+          cout<<"Enter location of desired element in array"<<"\n";
+        cin>>loc;
+	cout<<"located element is "<<card[loc-1]<<"\n";
+}	
+void resetelement(int game[],int n,int r,int g)
+{
+	int i;
+	for(i=r;i<n;i++)
+	{
+		game[i]=g;
+	}
+	cout<<" our desired serier of array "<<"\n";
+	for(i=0;i<n;i++)
+	{
+		cout<<game[i]<<"\n";
+	}
+}	
+  void getcount(int sur[],int j)
+{
+	cout<<" The current elements in an array:"<<j<<"\n";
+	
+}
+void getmaxsize(int adi[],int m)
+{
+	cout<< "The max number  of elements are :"<<m<<"\n";
+}	
