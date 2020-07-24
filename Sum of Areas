@@ -1,1 +1,78 @@
 #include<string.h>
+#include<iostream>
+using namespace std;
+class triangle
+{
+	public :
+	float  height,base;
+
+
+	void setdimensions(float  h,float b)
+	{
+		height=h;
+		base=b;
+	}
+	float getarea1()
+	{
+	  return  (height)*(base)/2;	
+        }
+};	
+class rectangle
+{
+	public :
+	float length,breadth;
+
+		void setdetails(float l,float ba)
+		{
+                  length =l;
+		  breadth=ba;
+		}
+		float getarea2()
+		{
+			return  length*breadth;
+		}	
+};
+class circle
+{
+	public :
+	float radius;
+			void setradius(float r)
+			{
+                            radius=r;
+			}
+		float getarea3()
+		{
+		    return (22*radius*radius)/7;
+	        }
+};
+class area
+{
+	public :
+          float  sumarea(float A1,float  A2,float A3)
+	  {
+		  return A1+A2+A3;
+	  }
+};	
+int main()
+{
+  triangle t;
+  rectangle r;
+  circle c;
+  area a;
+  float l,h,bs,ba,l2,r1;
+cout<<"Enter height and base of an triangle"<<"\n";
+  cin>>h>>bs;
+  t.setdimensions(h,bs);
+  float  A1=t.getarea1();
+                cout<<"Enter lenght and breadth of rectangle"<<"\n";
+  cin>>l>>ba;
+  r.setdetails(l,ba);
+  float  A2=r.getarea2();
+                 cout<<"Radius of the cirle"<<"\n";
+  cin>>r1;
+  c.setradius(r1);
+  float A3=c.getarea3();
+  float total=a.sumarea(A1,A2,A3);
+  cout<<" Total area  : "<<total<<"\n";
+  
+} 
